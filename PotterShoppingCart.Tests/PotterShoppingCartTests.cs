@@ -13,7 +13,18 @@ namespace PotterShoppingCart.Tests
 		[TestMethod]
 		public void PotterShopping_只買第一集價格是100元()
 		{
+			// arrange
+			var sut = new PotterShoppingCart();
 
+			sut.BuyFirstEpisode(1);
+
+			// act
+			var actual = sut.Payables();
+
+			// assert
+			var expected = 100;
+
+			Assert.AreEqual(expected, actual);
 		}
 	}
 }
