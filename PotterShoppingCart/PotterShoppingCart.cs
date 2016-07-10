@@ -18,12 +18,12 @@ namespace PotterShoppingCart
 
 		public void BuyFirstEpisode(int quantity)
 		{
-			
+			this.m_Potters["哈利波特1"] += quantity;
 		}
 
-		public object Payables()
+		public decimal Payables()
 		{
-			throw new NotImplementedException();
+			return this.m_Potters.Values.Sum() * 100;
 		}
 	}
 }
