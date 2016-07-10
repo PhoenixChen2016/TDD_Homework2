@@ -15,6 +15,7 @@ namespace PotterShoppingCart
 			["哈利波特4"] = 0,
 			["哈利波特5"] = 0,
 		};
+		private static decimal[] _Discounts = { 1M, 1M, 0.95M, 0.9M, 0.8M, 0.75M };
 
 		public void BuyFirstEpisode(int quantity)
 		{
@@ -53,17 +54,8 @@ namespace PotterShoppingCart
 
 		private static void CalculatePayables(int[] potters, ref decimal pay)
 		{
-			var discount = 1M;
 			var books = potters.Count(v => v > 0);
-
-			if (books == 5)
-				discount = 0.75M;
-			else if (books == 4)
-				discount = 0.8M;
-			else if (books == 3)
-				discount = 0.9M;
-			else if (books == 2)
-				discount = 0.95M;
+			var discount = _Discounts[books];
 
 			var set = potters.Where(v => v > 0).Min();
 
