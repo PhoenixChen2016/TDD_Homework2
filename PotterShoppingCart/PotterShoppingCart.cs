@@ -47,7 +47,9 @@ namespace PotterShoppingCart
 			var discount = 1M;
 			var books = this.m_Potters.Where(p => p.Value > 0).Count();
 
-			if (books >= 3)
+			if (books >= 4)
+				discount = 0.8M;
+			if (books == 3)
 				discount = 0.9M;
 			else if (books == 2)
 				discount = 0.95M;
