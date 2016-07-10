@@ -44,7 +44,11 @@ namespace PotterShoppingCart
 
 		public decimal Payables()
 		{
-			return this.m_Potters.Values.Sum() * 100;
+			var discount = 1M;
+			if (this.m_Potters.Where(p => p.Value > 0).Count() >= 2)
+				discount = 0.95M;
+
+			return this.m_Potters.Values.Sum() * 100 * discount;
 		}
 	}
 }
