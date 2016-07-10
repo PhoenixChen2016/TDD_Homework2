@@ -56,7 +56,10 @@ namespace PotterShoppingCart
 			else if (books == 2)
 				discount = 0.95M;
 
-			return this.m_Potters.Values.Sum() * 100 * discount;
+			var set = this.m_Potters.Values.Where(v => v > 0).Min();
+			var totalQuantity = this.m_Potters.Values.Sum();
+
+			return set * books * 100 * discount + (totalQuantity - set * books) * 100;
 		}
 	}
 }
