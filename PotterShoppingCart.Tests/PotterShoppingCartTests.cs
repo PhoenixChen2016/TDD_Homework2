@@ -44,5 +44,24 @@ namespace PotterShoppingCart.Tests
 
 			Assert.AreEqual(expected, actual);
 		}
+
+		[TestMethod]
+		public void PotterShopping_一二三集各買了一本_價格應該打9折為270元()
+		{
+			// arrange
+			var sut = new PotterShoppingCart();
+
+			sut.BuyFirstEpisode(1);
+			sut.BuySecondEpisode(1);
+			sut.BuyThirdEpisode(1);
+
+			// act
+			var actual = sut.Payables();
+
+			// assert
+			var expected = 270;
+
+			Assert.AreEqual(expected, actual);
+		}
 	}
 }
