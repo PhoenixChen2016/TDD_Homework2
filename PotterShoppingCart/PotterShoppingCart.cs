@@ -21,6 +21,27 @@ namespace PotterShoppingCart
 			this.m_Potters["哈利波特1"] += quantity;
 		}
 
+		public void BuySecondEpisode(int quantity)
+		{
+			this.m_Potters["哈利波特2"] += quantity;
+		}
+
+
+		public void BuyThirdEpisode(int quantity)
+		{
+			this.m_Potters["哈利波特3"] += quantity;
+		}
+
+		public void BuyForthEpisode(int quantity)
+		{
+			this.m_Potters["哈利波特4"] += quantity;
+		}
+
+		public void BuyFifthEpisode(int quantity)
+		{
+			this.m_Potters["哈利波特5"] += quantity;
+		}
+
 		public decimal Payables()
 		{
 			return this.m_Potters.Values.Sum() * 100;
