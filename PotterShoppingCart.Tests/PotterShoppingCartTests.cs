@@ -22,7 +22,7 @@ namespace PotterShoppingCart.Tests
 			var actual = sut.Payables();
 
 			// assert
-			var expected = 100;
+			var expected = 100M;
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -40,7 +40,7 @@ namespace PotterShoppingCart.Tests
 			var actual = sut.Payables();
 
 			// assert
-			var expected = 190;
+			var expected = 190M;
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -59,7 +59,7 @@ namespace PotterShoppingCart.Tests
 			var actual = sut.Payables();
 
 			// assert
-			var expected = 270;
+			var expected = 270M;
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -100,7 +100,7 @@ namespace PotterShoppingCart.Tests
 			var actual = sut.Payables();
 
 			// assert
-			var expected = 375;
+			var expected = 375M;
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -119,7 +119,26 @@ namespace PotterShoppingCart.Tests
 			var actual = sut.Payables();
 
 			// assert
-			var expected = 370;
+			var expected = 370M;
+
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void PotterShopping_第一集買了一本_第二三集各買了兩本_價格應為460元()
+		{
+			// arrange
+			var sut = new PotterShoppingCart();
+
+			sut.BuyFirstEpisode(1);
+			sut.BuySecondEpisode(2);
+			sut.BuyThirdEpisode(2);
+
+			// act
+			var actual = sut.Payables();
+
+			// assert
+			var expected = 460M;
 
 			Assert.AreEqual(expected, actual);
 		}
