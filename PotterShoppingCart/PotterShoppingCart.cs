@@ -7,7 +7,7 @@ namespace PotterShoppingCart
 {
 	public class PotterShoppingCart
 	{
-		public void BuyFirstEpisode(int v)
+		public void BuyFirstEpisode(int quantity)
 		{
 			throw new NotImplementedException();
 		}
