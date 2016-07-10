@@ -44,8 +44,17 @@ namespace PotterShoppingCart
 
 		public decimal Payables()
 		{
+			var totalAmount = 0M;
+
+			CalculatePayables(this.m_Potters.Values.ToArray(), ref totalAmount);
+
+			return totalAmount;
+		}
+
+		private static void CalculatePayables(int[] potters, ref decimal pay)
+		{
 			var discount = 1M;
-			var books = this.m_Potters.Where(p => p.Value > 0).Count();
+			var books = potters.Count(v => v > 0);
 
 			if (books == 5)
 				discount = 0.75M;
@@ -56,10 +65,14 @@ namespace PotterShoppingCart
 			else if (books == 2)
 				discount = 0.95M;
 
-			var set = this.m_Potters.Values.Where(v => v > 0).Min();
-			var totalQuantity = this.m_Potters.Values.Sum();
+			var set = potters.Where(v => v > 0).Min();
 
-			return set * books * 100 * discount + (totalQuantity - set * books) * 100;
+			pay += set * books * 100 * discount;
+
+			var newPotters = potters.Select(v => v == 0 ? v : v - set).ToArray();
+
+			if (newPotters.Sum() > 0)
+				CalculatePayables(newPotters, ref pay);
 		}
 	}
 }
