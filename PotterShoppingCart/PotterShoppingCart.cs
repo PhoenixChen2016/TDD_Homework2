@@ -15,7 +15,14 @@ namespace PotterShoppingCart
 			[PotterBook.ForthEpisode] = 0,
 			[PotterBook.FifthEpisode] = 0,
 		};
-		private static decimal[] _Discounts = { 1M, 1M, 0.95M, 0.9M, 0.8M, 0.75M };
+		private static Dictionary<int, decimal> _Discounts = new Dictionary<int, decimal>
+		{
+			[1] = 1M,
+			[2] = 0.95M,
+			[3] = 0.9M,
+			[4] = 0.8M,
+			[5] = 0.75M
+		};
 
 		public void BuyPotter(PotterBook potter, int quantity)
 		{
