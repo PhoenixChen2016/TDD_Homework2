@@ -7,44 +7,19 @@ namespace PotterShoppingCart
 {
 	public class PotterShoppingCart
 	{
-		private Dictionary<string, int> m_Potters = new Dictionary<string, int>
+		private Dictionary<PotterBook, int> m_Potters = new Dictionary<PotterBook, int>
 		{
-			["哈利波特1"] = 0,
-			["哈利波特2"] = 0,
-			["哈利波特3"] = 0,
-			["哈利波特4"] = 0,
-			["哈利波特5"] = 0,
+			[PotterBook.FirstEpisode] = 0,
+			[PotterBook.SecondEpisode] = 0,
+			[PotterBook.ThirdEpisode] = 0,
+			[PotterBook.ForthEpisode] = 0,
+			[PotterBook.FifthEpisode] = 0,
 		};
 		private static decimal[] _Discounts = { 1M, 1M, 0.95M, 0.9M, 0.8M, 0.75M };
 
-		public void BuyFirstEpisode(int quantity)
-		{
-			this.m_Potters["哈利波特1"] += quantity;
-		}
-
-		public void BuySecondEpisode(int quantity)
-		{
-			this.m_Potters["哈利波特2"] += quantity;
-		}
-
-
-		public void BuyThirdEpisode(int quantity)
-		{
-			this.m_Potters["哈利波特3"] += quantity;
-		}
-
-		public void BuyForthEpisode(int quantity)
-		{
-			this.m_Potters["哈利波特4"] += quantity;
-		}
-
-		public void BuyFifthEpisode(int quantity)
-		{
-			this.m_Potters["哈利波特5"] += quantity;
-		}
-
 		public void BuyPotter(PotterBook potter, int quantity)
 		{
+			this.m_Potters[potter] += quantity;
 		}
 
 		public decimal Payables()
