@@ -43,6 +43,10 @@ namespace PotterShoppingCart
 			this.m_Potters["哈利波特5"] += quantity;
 		}
 
+		public void BuyPotter(PotterBook potter, int quantity)
+		{
+		}
+
 		public decimal Payables()
 		{
 			var totalAmount = 0M;
