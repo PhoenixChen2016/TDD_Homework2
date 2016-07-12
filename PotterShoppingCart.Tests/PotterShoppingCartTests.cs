@@ -16,7 +16,7 @@ namespace PotterShoppingCart.Tests
 			// arrange
 			var sut = new PotterShoppingCart();
 
-			sut.BuyFirstEpisode(1);
+			sut.BuyPotter(PotterBook.FirstEpisode, 1);
 
 			// act
 			var actual = sut.Payables();
@@ -33,8 +33,8 @@ namespace PotterShoppingCart.Tests
 			// arrange
 			var sut = new PotterShoppingCart();
 
-			sut.BuyFirstEpisode(1);
-			sut.BuySecondEpisode(1);
+			sut.BuyPotter(PotterBook.FirstEpisode, 1);
+			sut.BuyPotter(PotterBook.SecondEpisode, 1);
 
 			// act
 			var actual = sut.Payables();
@@ -51,9 +51,9 @@ namespace PotterShoppingCart.Tests
 			// arrange
 			var sut = new PotterShoppingCart();
 
-			sut.BuyFirstEpisode(1);
-			sut.BuySecondEpisode(1);
-			sut.BuyThirdEpisode(1);
+			sut.BuyPotter(PotterBook.FirstEpisode, 1);
+			sut.BuyPotter(PotterBook.SecondEpisode, 1);
+			sut.BuyPotter(PotterBook.ThirdEpisode, 1);
 
 			// act
 			var actual = sut.Payables();
@@ -70,10 +70,10 @@ namespace PotterShoppingCart.Tests
 			// arrange
 			var sut = new PotterShoppingCart();
 
-			sut.BuyFirstEpisode(1);
-			sut.BuySecondEpisode(1);
-			sut.BuyThirdEpisode(1);
-			sut.BuyForthEpisode(1);
+			sut.BuyPotter(PotterBook.FirstEpisode, 1);
+			sut.BuyPotter(PotterBook.SecondEpisode, 1);
+			sut.BuyPotter(PotterBook.ThirdEpisode, 1);
+			sut.BuyPotter(PotterBook.ForthEpisode, 1);
 
 			// act
 			var actual = sut.Payables();
@@ -90,11 +90,11 @@ namespace PotterShoppingCart.Tests
 			// arrange
 			var sut = new PotterShoppingCart();
 
-			sut.BuyFirstEpisode(1);
-			sut.BuySecondEpisode(1);
-			sut.BuyThirdEpisode(1);
-			sut.BuyForthEpisode(1);
-			sut.BuyFifthEpisode(1);
+			sut.BuyPotter(PotterBook.FirstEpisode, 1);
+			sut.BuyPotter(PotterBook.SecondEpisode, 1);
+			sut.BuyPotter(PotterBook.ThirdEpisode, 1);
+			sut.BuyPotter(PotterBook.ForthEpisode, 1);
+			sut.BuyPotter(PotterBook.FifthEpisode, 1);
 
 			// act
 			var actual = sut.Payables();
@@ -111,9 +111,9 @@ namespace PotterShoppingCart.Tests
 			// arrange
 			var sut = new PotterShoppingCart();
 
-			sut.BuyFirstEpisode(1);
-			sut.BuySecondEpisode(1);
-			sut.BuyThirdEpisode(2);
+			sut.BuyPotter(PotterBook.FirstEpisode, 1);
+			sut.BuyPotter(PotterBook.SecondEpisode, 1);
+			sut.BuyPotter(PotterBook.ThirdEpisode, 2);
 
 			// act
 			var actual = sut.Payables();
@@ -130,9 +130,9 @@ namespace PotterShoppingCart.Tests
 			// arrange
 			var sut = new PotterShoppingCart();
 
-			sut.BuyFirstEpisode(1);
-			sut.BuySecondEpisode(2);
-			sut.BuyThirdEpisode(2);
+			sut.BuyPotter(PotterBook.FirstEpisode, 1);
+			sut.BuyPotter(PotterBook.SecondEpisode, 2);
+			sut.BuyPotter(PotterBook.ThirdEpisode, 2);
 
 			// act
 			var actual = sut.Payables();
